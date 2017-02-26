@@ -1,3 +1,12 @@
-<h1>
-  {{title}}
-</h1>
+Seconds<input type="text" [ngModel]="seconds" (ngModelChange)="populateFromSeconds($event)"><br>
+Hours<input type="text" [(ngModel)]="hours"><br>
+Days<input type="text" [(ngModel)]="days"><br>
+Years<input type="text" [ngModel]="years" (ngModelChange)="populateFromYears($event)"><br>
+Million Years<input type="text" [ngModel]="millionYears" (ngModelChange)="populateFromYears($event * 1000000)"><br>
+
+<input type="text" [(ngModel)]="lightyears"><br>
+
+<p>Seconds: {{resultSeconds}}</p>
+<p>Hours: {{resultHours}}</p>
+<p>Days: {{resultDays}}</p>
+<p>Years: {{resultYears}}</p>
