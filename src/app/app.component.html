@@ -10,3 +10,5 @@ Million Years<input type="text" [ngModel]="millionYears" (ngModelChange)="popula
 <p>Hours: {{resultHours}}</p>
 <p>Days: {{resultDays}}</p>
 <p>Years: {{resultYears}}</p>
+
+<div class="moving-target" [ngStyle]="{'top.em': yCoord}"></div>

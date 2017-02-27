@@ -15,6 +15,9 @@ export class AppComponent {
   years;
   millionYears;
 
+  yCoord = 1;
+  goingDown = true;
+
   resultSeconds;
   resultHours;
   resultDays;
@@ -25,6 +28,26 @@ export class AppComponent {
     this.hours = 0;
     this.days = 0;
     this.years = 0;
+    this.yCoord = 7;
+
+    setInterval(() => { this.changePosition(this) }, 5);
+
+  }
+
+  changePosition(tempThis: any) {
+    // console.log('Going: ', tempThis.goingDown, tempThis.yCoord);
+    if (tempThis.goingDown) {
+      tempThis.yCoord += 0.1;
+      if (tempThis.yCoord > 50) {
+        tempThis.goingDown = false;
+      }
+    } else {
+      tempThis.yCoord -= 0.1;      
+      if (tempThis.yCoord < 1) {
+        tempThis.goingDown = true;
+      }
+    }
+
   }
 
   populateFromSeconds(seconds) {
